@@ -1,0 +1,211 @@
+/*header logo mas barritas*/
+header {
+    grid-area: menu;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;    
+    background: #AE67AE;
+    color: white;   
+}
+span{
+    margin-left: 10px;   
+}
+.menu-principal {
+    display:none; 
+}
+select {
+    padding: 10px;
+    margin: 0px 80px;
+    border-radius: 10px;
+}
+/*seccion busqueda*/
+.search{
+    grid-area:seccion-busqueda;
+    background-color:#F4E0D7;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    text-align: center;
+    padding: 10px 0px 20px 0px; 
+}
+/*seccion-principal*/
+img{
+    width: 200px;
+    object-fit: cover;
+}
+.container-cards{
+    grid-area:seccion-principal;
+    background-color:#F7F7F7;       
+    text-align: center;
+    display: flex;
+    flex-direction: column; 
+    align-items:center;     
+    font-weight: bold;  
+}
+.container-card{    
+    margin-top: 20px;
+    padding: 20px;    
+}
+button{
+    background-color: #B4AAB8;
+    border-radius: 5px;
+    border-color: #B4AAB8;
+    padding: 8px 10px;
+    color: white;
+}
+/*Paginador*/
+.pages ul{       
+    list-style: none;
+    text-align: center; 
+    margin: 20px 0px 20px 0px;   
+}
+.pages ul li{
+    display: inline-block;   
+}
+.pages ul li a {
+    display: inline-block;
+    padding: 10px;
+    color: white;
+    background-color: #AE67AE;
+    text-decoration:none;
+}
+.pages ul li a:hover{
+    background-color:#b0ff57 ;
+} 
+/*pie de pagina*/
+footer {
+    grid-area: pie-pagina;
+    background-color: #AE67AE;
+    color: white;
+    padding: 5px;
+    text-align: center; 
+    font-size: 12px;
+}
+
+/*display grid y darle template areas*/
+main {
+    display: grid;
+    min-height: 100hv;   
+    grid-template-areas:
+                        "menu"
+                        "seccion-busqueda"
+                        "seccion-principal"                                              
+                        "pie-pagina";   
+    grid-template-columns: auto;
+    grid-template-rows:60px 80px auto 60px;
+    font-family:'Roboto', sans-serif;
+}
+
+/*MEDIA QUERIES 576*/
+@media screen and (min-width:576px){
+    main{
+        grid-template-areas:
+                            "menu seccion-busqueda"
+                            "menu seccion-principal"
+                            "menu seccion-principal"                                              
+                            "pie-pagina seccion-principal";
+        
+        grid-template-columns: 150px auto;
+        grid-template-rows: auto 200px;                    
+    }
+    header {
+        display: flex;
+        flex-direction: column;
+        justify-content:flex-start;
+        align-items: center;
+    }
+    .menu-principal{
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;             
+    }
+    header > ul  li{
+        padding-bottom: 15px;
+    }
+    header > .burger{
+        display: none;
+    }
+    .container-cards{
+        display: grid;
+        grid-template-columns:auto auto auto auto;
+        justify-content: center;
+        align-items: center;        
+        gap:10px;                      
+    }
+    .container-card{    
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        background-color: white;
+        font-size: 15px;   
+        border: 1px groove;    
+    }
+    img{
+        max-width: 100%;
+        height: 200px;
+        object-fit:contain;
+    }
+    .pages {      
+        align-items: center;
+        justify-content: center;
+        grid-template-rows: auto;
+        grid-column: -4 / -2;
+    }
+}
+
+ /*MEDIA QUERIES 992PX*/
+
+ @media screen and (min-width:576px) and (max-width:992px){
+    main{        
+         grid-template-areas:
+                            "menu menu"
+                            "seccion-busqueda seccion-principal"                            
+                            "pie-pagina pie-pagina"
+                        ;   
+    grid-template-columns: 250px auto;
+    grid-template-rows:80px  auto;
+    font-family:'Roboto', sans-serif;                         
+    } 
+    header {
+        display: flex;
+        flex-direction:row;
+        justify-content: space-between;           
+    }
+    .menu-principal{
+        margin-top: 10px;
+        display: flex; 
+        flex-direction:row;                    
+    }
+    ul li{        
+        padding: 10px 10px;
+    }       
+    .search{      
+        background-color:#F4E0D7;
+        display:flow-root;        
+    }
+    select {
+        padding: 15px 50px;
+        margin: 0px;
+        border-radius: 10px;
+    }
+    .container-cards{
+        display: grid;
+        grid-template-columns:auto auto auto;
+        justify-content: center;
+        align-items: center;        
+        gap:10px;                      
+    }  
+    button{        
+        padding: 5px 10px;        
+   } 
+   .pages li{ 
+    padding: 0px;       
+   }
+}
+
+   
+    
+
